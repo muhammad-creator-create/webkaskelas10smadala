@@ -1,0 +1,1672 @@
+<<!DOCTYPE html>
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Kas Kelas 10 - SMA Negeri 2 Lamongan
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   :root {
+      --primary-color: #1a237e;
+      --secondary-color: #303f9f;
+      --accent-color: #536dfe;
+      --text-color: #ffffff;
+      --warning-color: #ff5722;
+      --error-color: #d32f2f;
+      --success-color: #4caf50;
+      --light-blue: #e8eaf6;
+      --silver-glossy: linear-gradient(135deg, #c0c0c0 0%, #e0e0e0 50%, #c0c0c0 100%);
+      --blue-glossy: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #3b82f6 100%);
+    }
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+      color: #333;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Custom animation delay classes */
+    .animation-delay-200 {
+      animation-delay: 0.2s;
+    }
+    .animation-delay-400 {
+      animation-delay: 0.4s;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1s ease forwards;
+    }
+    /* Silver glossy button style */
+    .btn-silver-glossy {
+      background: var(--silver-glossy);
+      color: #1e40af;
+      font-weight: 700;
+      box-shadow: 0 0 12px #a0a0a0;
+      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      border-radius: 1.5rem;
+      padding: 1.25rem 3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 1.125rem;
+      box-shadow:
+        0 0 8px #a0a0a0,
+        inset 0 1px 0 #ffffff88,
+        inset 0 -1px 4px #c0c0c0;
+    }
+    .btn-silver-glossy::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, rgba(255,255,255,0.15) 25%, transparent 50%, rgba(255,255,255,0.15) 75%);
+      transform: rotate(25deg);
+      animation: shine 3s linear infinite;
+      pointer-events: none;
+      opacity: 0.6;
+      border-radius: 1.5rem;
+      z-index: 1;
+    }
+    @keyframes shine {
+      0% {
+        transform: translateX(-100%) rotate(25deg);
+      }
+      100% {
+        transform: translateX(100%) rotate(25deg);
+      }
+    }
+    .btn-silver-glossy:hover {
+      background: linear-gradient(135deg, #e0e0e0 0%, #f8f8f8 50%, #e0e0e0 100%);
+      box-shadow:
+        0 0 20px #a0a0a0,
+        inset 0 1px 0 #ffffffcc,
+        inset 0 -1px 6px #c0c0c0;
+      transform: translateY(-3px) scale(1.05);
+      z-index: 10;
+    }
+    .btn-silver-glossy i {
+      margin-right: 0.75rem;
+      filter: drop-shadow(0 0 1px #1e40af);
+      z-index: 11;
+      position: relative;
+    }
+    /* Blue glossy button style */
+    .btn-blue-glossy {
+      background: var(--blue-glossy);
+      color: white;
+      font-weight: 700;
+      box-shadow:
+        0 0 15px #3b82f6,
+        inset 0 1px 0 #a5c8ff,
+        inset 0 -1px 6px #1e40af;
+      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      border-radius: 1.5rem;
+      padding: 1.25rem 3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 1.125rem;
+    }
+    .btn-blue-glossy::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, rgba(255,255,255,0.3) 25%, transparent 50%, rgba(255,255,255,0.3) 75%);
+      transform: rotate(25deg);
+      animation: shine 3s linear infinite;
+      pointer-events: none;
+      opacity: 0.8;
+      border-radius: 1.5rem;
+      z-index: 1;
+    }
+    .btn-blue-glossy:hover {
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #60a5fa 100%);
+      box-shadow:
+        0 0 30px #3b82f6,
+        inset 0 1px 0 #c3dbff,
+        inset 0 -1px 8px #1e40af;
+      transform: translateY(-3px) scale(1.05);
+      z-index: 10;
+    }
+    .btn-blue-glossy i {
+      margin-right: 0.75rem;
+      filter: drop-shadow(0 0 2px #93c5fd);
+      z-index: 11;
+      position: relative;
+    }
+    /* Sticker style for social icons */
+    .sticker-icon {
+      background: white;
+      border-radius: 9999px;
+      padding: 0.5rem;
+      box-shadow:
+        0 4px 6px rgba(0,0,0,0.1),
+        inset 0 1px 0 #ffffff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #1a237e;
+      font-size: 1.75rem;
+      user-select: none;
+      position: relative;
+      z-index: 0;
+    }
+    .sticker-icon::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #536dfe, #1a237e);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    .sticker-icon:hover {
+      transform: scale(1.2);
+      box-shadow:
+        0 8px 12px rgba(0,0,0,0.25),
+        inset 0 1px 0 #ffffffcc;
+      color: #536dfe;
+    }
+    .sticker-icon:hover::before {
+      opacity: 0.15;
+    }
+    /* Sticker container */
+    .sticker-container {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    /* Input and select focus glow */
+    input:focus, select:focus {
+      outline: none;
+      box-shadow: 0 0 8px 2px #536dfe;
+      border-color: #536dfe;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    /* Scrollbar for tables */
+    ::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #536dfe;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3b5bdc;
+    }
+    /* Table header style */
+    thead th {
+      text-shadow: 0 0 3px #fbbf24;
+    }
+    /* Table row hover */
+    tbody tr:hover {
+      background: #fff9db;
+      transition: background 0.3s ease;
+    }
+    /* Button active effect */
+    .btn-silver-glossy:active, .btn-blue-glossy:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: none;
+      transition: transform 0.1s ease;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .btn-silver-glossy, .btn-blue-glossy {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+      .btn-silver-glossy i, .btn-blue-glossy i {
+        margin-right: 0.5rem;
+      }
+    }
+    /* Center welcome text horizontally */
+    #dashboardPage h2 {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-size: 2rem; /* Adjusted font size to medium */
+      font-weight: 800;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      background: rgba(255 255 255 / 0.15);
+      color: white;
+      text-shadow: 0 0 6px #00000088;
+      user-select: none;
+      display: inline-block;
+      animation: fadeIn 1s ease forwards;
+    }
+  </style>
+ </head>
+ <body class="flex flex-col min-h-screen">
+  <!-- Loading Screen -->
+  <div class="fixed inset-0 bg-primary-900 flex flex-col justify-center items-center z-50 transition-opacity duration-500" id="loadingScreen" style="background-color: var(--primary-color)">
+   <div class="text-center animate-fadeIn">
+    <div class="relative w-20 h-20 mx-auto mb-5">
+     <div class="absolute w-full h-full rounded-full border-8 border-t-white border-transparent animate-spin" style="border-top-color: var(--text-color)">
+     </div>
+     <div class="absolute w-full h-full rounded-full border-8 border-t-indigo-400 border-transparent animate-spin animation-delay-200" style="border-top-color: var(--accent-color); animation-delay: 0.2s">
+     </div>
+     <div class="absolute w-full h-full rounded-full border-8 border-t-white/70 border-transparent animate-spin animation-delay-400" style="border-top-color: rgba(255,255,255,0.7); animation-delay: 0.4s">
+     </div>
+    </div>
+    <div class="bg-white rounded-full p-2 mx-auto mb-5 inline-block shadow-lg">
+     <img alt="Logo SMAN 2 Lamongan, emblem resmi sekolah dengan warna biru dan putih, desain modern dan bersih, latar belakang putih bulat" class="w-30 h-30 mx-auto" height="120" src="https://sman2lamongan.sch.id/wp-content/uploads/2024/10/Desain_tanpa_judul__3_-removebg-preview.png" style="width: 120px; height: 120px" width="120"/>
+    </div>
+    <h2 class="text-white text-2xl font-medium drop-shadow-md">
+     Mempersiapkan Aplikasi Kas Kelas 10 SMAN 2 LAMONGAN
+    </h2>
+    <p class="text-white/80 mt-4 text-base">
+     Harap tunggu sebentar...
+    </p>
+   </div>
+  </div>
+  <!-- Navbar -->
+  <nav class="bg-gradient-to-r from-[#1a237e] to-[#536dfe] text-white shadow-md sticky top-0 z-40">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   <div class="flex items-center justify-between h-16">
+     <div class="flex items-center space-x-3">
+      <div class="bg-white rounded-full p-1 shadow-md">
+       <img alt="Logo SMAN 2 Lamongan, emblem resmi sekolah dengan warna biru dan putih, desain modern dan bersih, latar belakang putih bulat" class="h-10 w-10 rounded" height="40" src="https://sman2lamongan.sch.id/wp-content/uploads/2024/10/Desain_tanpa_judul__3_-removebg-preview.png" width="40"/>
+      </div>
+      <span class="font-semibold text-xl text-white tracking-wide drop-shadow-lg">
+       Kas Kelas 10 SMADALA
+      </span>
+     </div>
+     <div class="hidden md:flex space-x-6 font-medium text-white">
+      <button class="btn-blue-glossy relative overflow-hidden group" id="navHome" type="button" aria-label="Home">
+       <i class="fas fa-home"></i> Home
+      </button>
+      <button class="btn-blue-glossy relative overflow-hidden group" id="navTambahSiswa" type="button" aria-label="Tambah Siswa">
+       <i class="fas fa-user-plus"></i> Tambah Siswa
+      </button>
+      <button class="btn-blue-glossy relative overflow-hidden group" id="navKasSiswa" type="button" aria-label="Kas Per Siswa">
+       <i class="fas fa-wallet"></i> Kas Per Siswa
+      </button>
+      <button class="btn-blue-glossy relative overflow-hidden group" id="navRekapanKelas" type="button" aria-label="Rekapan Kas Kelas">
+       <i class="fas fa-file-invoice-dollar"></i> Rekapan Kas Kelas
+      </button>
+      <button class="btn-blue-glossy relative overflow-hidden group" id="navLaporanRekapitulasi" type="button" aria-label="Laporan Rekapitulasi">
+       <i class="fas fa-file-alt"></i> Laporan Rekapitulasi
+      </button>
+      <button id="btnLogout" class="btn-blue-glossy relative overflow-hidden group" type="button" aria-label="Keluar">
+        <i class="fas fa-sign-out-alt mr-2"></i> Keluar
+      </button>
+   </div>
+     <button id="mobileMenuButton" aria-label="Toggle menu" class="md:hidden flex flex-col justify-center items-center space-y-1.5 focus:outline-none focus:ring-2 focus:ring-white rounded">
+      <span class="block w-7 h-0.5 bg-white rounded"></span>
+      <span class="block w-7 h-0.5 bg-white rounded"></span>
+      <span class="block w-7 h-0.5 bg-white rounded"></span>
+     </button>
+    </div>
+   </div>
+   <div id="mobileMenu" class="hidden md:hidden bg-gradient-to-r from-[#1a237e] to-[#536dfe] text-white px-4 pb-4 space-y-2">
+    <button class="btn-blue-glossy relative overflow-hidden group" id="mobileNavHome" type="button" aria-label="Home">
+     <i class="fas fa-home mr-2"></i> Home
+    </button>
+    <button class="btn-blue-glossy relative overflow-hidden group" id="mobileNavTambahSiswa" type="button" aria-label="Tambah Siswa">
+     <i class="fas fa-user-plus mr-2"></i> Tambah Siswa
+    </button>
+    <button class="btn-blue-glossy relative overflow-hidden group" id="mobileNavKasSiswa" type="button" aria-label="Kas Per Siswa">
+     <i class="fas fa-wallet mr-2"></i> Kas Per Siswa
+    </button>
+      <button class="btn-blue-glossy relative overflow-hidden group" id="mobileNavRekapanKelas" type="button" aria-label="Rekapan Kas Kelas">
+     <i class="fas fa-file-alt mr-2"></i> Rekapan Kas Kelas
+    </button>
+    <button class="btn-blue-glossy relative overflow-hidden group" id="mobileNavLaporanRekapitulasi" type="button" aria-label="Laporan Rekapitulasi">
+     <i class="fas fa-file-alt mr-2"></i> Laporan Rekapitulasi
+    </button>
+    <button id="mobileBtnLogout" class="btn-blue-glossy relative overflow-hidden group" type="button" aria-label="Keluar">
+      <i class="fas fa-sign-out-alt mr-2"></i> Keluar
+    </button>
+   </div>
+  </nav>
+  <!-- Login Container -->
+  <main class="flex-grow">
+   <section class="max-w-md mx-auto mt-12 p-10 bg-gradient-to-br from-white to-[#e8eaf6] border border-indigo-200 rounded-2xl shadow-lg text-center relative" id="loginPage">
+    <div class="btn-blue-glossy relative overflow-hidden group">
+     <img alt="Logo SMAN 2 Lamongan, emblem resmi sekolah dengan warna biru dan putih, desain modern dan bersih, latar belakang putih bulat" class="w-44 filter drop-shadow-lg hover:scale-105 transition-transform duration-300" height="80" src="https://sman2lamongan.sch.id/wp-content/uploads/2024/10/Desain_tanpa_judul__3_-removebg-preview.png" width="180"/>
+    </div>
+    <h1 class="text-3xl font-semibold bg-gradient-to-r from-[#1a237e] to-[#536dfe] bg-clip-text text-transparent mb-6 tracking-widest">
+     Login Admin Kelas 10
+    </h1>
+    <p class="text-gray-600 mb-8 text-base leading-relaxed tracking-wide">
+     Silakan login menggunakan username dan password yang valid untuk mengelola kas kelas.
+    </p>
+    <form class="flex flex-col gap-6" id="loginForm" novalidate>
+     <div class="text-left relative">
+      <label class="block mb-2 font-medium text-indigo-900 tracking-wide" for="username">
+       Username
+      </label>
+      <input autocomplete="off" class="w-full px-5 py-3 border-2 border-gray-300 rounded-lg text-lg transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300 bg-white shadow-md" id="username" placeholder="Masukkan username" required="" type="text"/>
+     </div>
+     <div class="text-left relative">
+      <label class="block mb-2 font-medium text-indigo-900 tracking-wide" for="password">
+       Password
+      </label>
+      <input autocomplete="off" class="w-full px-5 py-3 border-2 border-gray-300 rounded-lg text-lg transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300 bg-white shadow-md" id="password" placeholder="Masukkan password" required="" type="password"/>
+     </div>
+     <div class="text-left relative">
+      <label class="block mb-2 font-medium text-indigo-900 tracking-wide" for="namaBendahara">
+       Nama Bendahara
+      </label>
+      <input autocomplete="off" class="w-full px-5 py-3 border-2 border-gray-300 rounded-lg text-lg transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300 bg-white shadow-md" id="namaBendahara" placeholder="Masukkan nama anda" required="" type="text"/>
+     </div>
+     <div class="text-left relative">
+      <label class="block mb-2 font-medium text-indigo-900 tracking-wide" for="captchaInput">
+       Ketik angka berikut: <span id="captchaText" class="font-bold text-lg select-none"></span>
+      </label>
+      <input autocomplete="off" class="w-full px-5 py-3 border-2 border-gray-300 rounded-lg text-lg transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300 bg-white shadow-md" id="captchaInput" placeholder="Masukkan angka di atas" required="" type="text" inputmode="numeric" pattern="[0-9]*"/>
+     </div>
+     <button class="btn-blue-glossy relative overflow-hidden group" type="submit" aria-label="Masuk">
+      Masuk
+      <span class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-300 rounded-2xl"></span>
+     </button>
+    </form>
+   </section>
+  <!-- Dashboard Container -->
+   <section class="max-w-5xl mx-auto mt-14 p-12 bg-gradient-to-r from-[#1a237e] to-[#536dfe] rounded-3xl shadow-2xl ring-1 ring-yellow-400 hidden relative" id="dashboardPage" role="region" aria-label="Dashboard Kas Kelas 10">
+    <h2 class="animate-fadeIn">
+     Welcome To Kas Kelas 10 SMADALA
+    </h2>
+    <div class="btn-blue-glossy relative overflow-hidden group">
+      Nama Bendahara: <span id="bendaharaNameDisplay" class="underline decoration-yellow-400 decoration-2"></span>
+    </div>
+    <div class="max-w-4xl mx-auto bg-gradient-to-r from-yellow-100 to-yellow-50 p-8 rounded-2xl shadow-inner border-l-8 border-yellow-400 animate-fadeIn" style="animation-delay: 0.5s;">
+      <h3 class="text-3xl font-bold mb-6 text-yellow-900 tracking-wide drop-shadow-md">Selamat Datang!</h3>
+      <p class="mb-8 text-yellow-800 leading-relaxed text-lg tracking-wide">
+        Terima kasih telah menggunakan aplikasi Kas Kelas 10 SMA Negeri 2 Lamongan. Aplikasi ini membantu Anda mengelola keuangan kelas dengan mudah dan efisien.
+      </p>
+      <h4 class="text-2xl font-semibold mb-5 text-yellow-900 tracking-wide drop-shadow-md">Petunjuk Penggunaan:</h4>
+      <ul class="list-disc list-inside space-y-3 text-lg leading-relaxed text-yellow-900">
+        <li>Gunakan menu <strong>Tambah Siswa</strong> untuk menambahkan data siswa baru ke dalam sistem.</li>
+        <li>Menu <strong>Kas Per Siswa</strong> digunakan untuk mencatat pemasukan kas per siswa, serta status pembayarannya.</li>
+        <li>Di menu <strong>Rekapan Kas Kelas</strong>, Anda dapat melihat total pemasukan, pengeluaran, dan saldo kas kelas secara keseluruhan.</li>
+        <li>Menu <strong>Laporan Rekapitulasi</strong> menampilkan laporan gabungan pemasukan siswa, pemasukan lain, dan pengeluaran lain dalam satu laporan rekapitulasi per bulan dan tahun.</li>
+        <li>Semua data tersimpan secara otomatis di browser Anda, sehingga tidak perlu khawatir kehilangan data.</li>
+      </ul>
+    </div>
+   </section>
+   <!-- Tambah Siswa Section -->
+   <section class="max-w-4xl mx-auto mt-14 p-12 bg-white rounded-3xl shadow-2xl ring-1 ring-yellow-400 hidden animate-fadeIn" id="tambahSiswaSection" role="region" aria-label="Tambah Siswa">
+    <h2 class="text-4xl font-extrabold text-center text-yellow-900 mb-12 relative inline-block select-none tracking-tight drop-shadow-md">
+     Tambah Siswa
+     <span class="absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-28 h-1 rounded-full bg-gradient-to-r from-yellow-600 to-yellow-400 shadow-lg"></span>
+    </h2>
+    <form class="max-w-lg mx-auto flex flex-wrap gap-8 justify-center" id="formTambahSiswa" novalidate>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="namaSiswa">
+       Nama Siswa
+      </label>
+      <input class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="namaSiswa" name="namaSiswa" placeholder="Masukkan nama siswa" required="" type="text" aria-required="true"/>
+     </div>
+     <button class="btn-blue-glossy relative overflow-hidden group" type="submit" aria-label="Tambah Siswa">
+      <i class="fas fa-user-plus"></i> Tambah Siswa
+     </button>
+    </form>
+   </section>
+ <!-- Kas Per Siswa Section -->
+   <section class="max-w-5xl mx-auto mt-14 p-12 bg-white rounded-3xl shadow-2xl ring-1 ring-yellow-400 hidden animate-fadeIn" id="kasSiswaSection" role="region" aria-label="Kas Per Siswa">
+    <h2 class="text-4xl font-extrabold text-center text-yellow-900 mb-12 relative inline-block select-none tracking-tight drop-shadow-md">
+     Kas Per Siswa
+     <span class="absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-28 h-1 rounded-full bg-gradient-to-r from-yellow-600 to-yellow-400 shadow-lg"></span>
+    </h2>
+    <form class="max-w-4xl mx-auto flex flex-wrap gap-8 justify-center" id="formKasSiswa" novalidate>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="selectSiswaKas">
+       Pilih Siswa
+      </label>
+      <select class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="selectSiswaKas" required="" aria-required="true">
+       <option disabled="" selected="">-- Pilih Siswa --</option>
+      </select>
+     </div>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="jenisKas">
+       Jenis Kas
+      </label>
+      <select class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="jenisKas" required="" aria-required="true">
+       <option disabled="" selected="">-- Pilih Jenis Kas --</option>
+       <option value="pemasukan">Pemasukan</option>
+      </select>
+     </div>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="nominalKas">
+       Nominal (Rp)
+      </label>
+      <select class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="nominalKas" required="" aria-required="true">
+       <option disabled="" selected="">-- Pilih Nominal --</option>
+       <option value="1000">1.000</option>
+       <option value="2000">2.000</option>
+       <option value="3000">3.000</option>
+       <option value="4000">4.000</option>
+       <option value="5000">5.000</option>
+       <option value="6000">6.000</option>
+       <option value="7000">7.000</option>
+       <option value="8000">8.000</option>
+       <option value="9000">9.000</option>
+       <option value="10000">10.000</option>
+      </select>
+     </div>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="statusKas">
+       Status Pembayaran
+      </label>
+      <select class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="statusKas" required="" aria-required="true">
+       <option disabled="" selected="">-- Pilih Status --</option>
+       <option value="belum">Belum Lunas</option>
+       <option value="lunas">Lunas</option>
+      </select>
+     </div>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="tanggalKas">
+       Tanggal
+      </label>
+      <input class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="tanggalKas" required="" type="date" aria-required="true"/>
+     </div>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="keteranganKas">
+       Keterangan
+      </label>
+      <input class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="keteranganKas" placeholder="Masukkan keterangan (opsional)" type="text"/>
+     </div>
+     <button class="btn-blue-glossy relative overflow-hidden group" type="submit" aria-label="Tambah Kas">
+      <i class="fas fa-wallet"></i> Tambah Kas
+     </button>
+    </form>
+    <div class="overflow-x-auto mt-10 rounded-xl shadow-lg ring-1 ring-yellow-400">
+     <table class="w-full border-collapse text-base font-semibold">
+      <thead class="bg-yellow-100 text-yellow-900 tracking-wide select-none">
+       <tr>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Nama Siswa
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Jenis Kas
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-right">
+         Nominal (Rp)
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Status
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Tanggal
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Keterangan
+        </th>
+       </tr>
+      </thead>
+      <tbody class="bg-white" id="tableKasSiswaBody" role="rowgroup" aria-live="polite" aria-relevant="all">
+      </tbody>
+     </table>
+    </div>
+    <div class="max-w-4xl mx-auto mt-8 text-yellow-900 font-extrabold text-xl text-right tracking-wide select-none">
+      Total Bayar Semua Siswa Bulan Ini: <span id="totalBayarSemuaSiswa" class="text-yellow-700"></span> Rp
+    </div>
+    <div class="max-w-4xl mx-auto mt-2 text-yellow-900 font-extrabold text-xl text-right tracking-wide select-none">
+      Total Bayar Per Bulan Siswa Terpilih: <span id="totalBayarPerBulanSiswa" class="text-yellow-700"></span> Rp
+    </div>
+    <button id="btnDownloadKasPerSiswa" class="btn-blue-glossy relative overflow-hidden group" type="button" aria-label="Unduh PDF Kas Per Siswa">
+      <i class="fas fa-file-pdf"></i> Unduh PDF Kas Siswa
+    </button>
+   </section>
+   <!-- Rekapan Kas Kelas Section -->
+   <section class="max-w-5xl mx-auto mt-14 p-12 bg-white rounded-3xl shadow-2xl ring-1 ring-yellow-400 hidden animate-fadeIn" id="rekapanKelasSection" role="region" aria-label="Rekapan Kas Kelas">
+    <h2 class="text-4xl font-extrabold text-center text-yellow-900 mb-12 relative inline-block select-none tracking-tight drop-shadow-md">
+     Rekapan Kas Kelas
+     <span class="absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-28 h-1 rounded-full bg-gradient-to-r from-yellow-600 to-yellow-400 shadow-lg"></span>
+    </h2>
+    <form class="max-w-4xl mx-auto flex flex-wrap gap-8 justify-center mb-10" id="formRekapanKelas" novalidate>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="jenisKasRekapan">
+       Jenis Kas
+      </label>
+      <select class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="jenisKasRekapan" aria-required="false">
+       <option value="" selected>-- Semua Jenis Kas --</option>
+       <option value="pemasukan">Pemasukan</option>
+       <option value="pengeluaran">Pengeluaran</option>
+      </select>
+     </div>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="tanggalRekapan">
+       Tanggal
+      </label>
+      <input class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="tanggalRekapan" type="date" aria-required="false"/>
+     </div>
+     <div class="flex flex-col flex-1 min-w-[240px]">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="nominalKasRekapan">
+       Nominal (Rp)
+      </label>
+      <input class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="nominalKasRekapan" placeholder="Masukkan nominal kas kelas" type="number" min="1" required="" aria-required="true"/>
+     </div>
+     <div class="flex flex-col flex-1 min-w-full">
+      <label class="font-extrabold text-yellow-900 mb-3 text-lg tracking-wide" for="keteranganKasRekapan">
+       Keterangan
+      </label>
+      <input class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" id="keteranganKasRekapan" placeholder="Masukkan keterangan (opsional)" type="text"/>
+     </div>
+     <button class="btn-blue-glossy relative overflow-hidden group" type="submit" aria-label="Tambah Kas Kelas">
+      <i class="fas fa-file-invoice-dollar"></i> Tambah Kas Kelas
+     </button>
+    </form>
+    <div class="overflow-x-auto rounded-xl shadow-lg ring-1 ring-yellow-400">
+     <table class="w-full border-collapse text-base font-semibold">
+      <thead class="bg-yellow-100 text-yellow-900 tracking-wide select-none">
+       <tr>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Keterangan
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Jenis Kas
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Tanggal
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-right">
+         Nominal (Rp)
+        </th>
+       </tr>
+      </thead>
+      <tbody class="bg-white" id="rekapanKelasBody" role="rowgroup" aria-live="polite" aria-relevant="all">
+      </tbody>
+      <tfoot class="font-extrabold bg-yellow-200 text-yellow-900 select-none">
+       <tr class="bg-yellow-300 font-extrabold">
+        <td class="border border-yellow-300 px-6 py-4 text-left" colspan="3">
+         Total Pemasukan
+        </td>
+        <td class="border border-yellow-300 px-6 py-4 text-right" id="totalPemasukanKelas">
+         0
+        </td>
+       </tr>
+       <tr>
+        <td class="border border-yellow-300 px-6 py-4 text-left" colspan="3">
+         Total Pengeluaran
+        </td>
+        <td class="border border-yellow-300 px-6 py-4 text-right" id="totalPengeluaranKelas">
+         0
+        </td>
+       </tr>
+       <tr class="bg-yellow-400 font-extrabold">
+        <td class="border border-yellow-300 px-6 py-4 text-left" colspan="3">
+         Saldo Kas Kelas
+        </td>
+        <td class="border border-yellow-300 px-6 py-4 text-right" id="saldoKasKelas">
+         0
+        </td>
+       </tr>
+      </tfoot>
+     </table>
+    </div>
+    <button id="btnDownloadRekapanKelas" class="btn-blue-glossy relative overflow-hidden group" type="button" aria-label="Unduh PDF Rekapan Kas Kelas">
+      <i class="fas fa-file-pdf"></i> Unduh PDF Rekapan Kas Kelas
+    </button>
+   </section>
+   <!-- Laporan Rekapitulasi Section -->
+   <section class="max-w-5xl mx-auto mt-14 p-12 bg-white rounded-3xl shadow-2xl ring-1 ring-yellow-400 hidden animate-fadeIn" id="laporanRekapitulasiSection" role="region" aria-label="Laporan Rekapitulasi Keuangan Kelas 10">
+    <h2 class="text-4xl font-extrabold text-center text-yellow-900 mb-12 relative inline-block select-none tracking-tight drop-shadow-md">
+     Laporan Rekapitulasi Keuangan Kelas 10
+     <span class="absolute bottom-[-12px] left-1/2 -translate-x-1/2 w-36 h-1 rounded-full bg-gradient-to-r from-yellow-600 to-yellow-400 shadow-lg"></span>
+    </h2>
+    <div class="max-w-5xl mx-auto mb-10 flex justify-center flex-wrap gap-6">
+      <label for="filterBulanRekap" class="font-extrabold text-yellow-900 self-center text-lg select-none tracking-wide">Pilih Bulan:</label>
+      <input type="month" id="filterBulanRekap" class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" aria-label="Filter Bulan"/>
+      <label for="filterTahunRekap" class="font-extrabold text-yellow-900 self-center text-lg select-none tracking-wide">Pilih Tahun:</label>
+      <select id="filterTahunRekap" class="px-6 py-4 border-2 border-yellow-300 rounded-3xl text-xl font-semibold transition focus:border-yellow-500 focus:ring-4 focus:ring-yellow-300 bg-white shadow-lg" aria-label="Filter Tahun">
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+        <option value="2028">2028</option>
+        <option value="2025-duplicate">2025</option>
+      </select>
+      <button id="btnDownloadLaporanRekapitulasi" class="btn-blue-glossy relative overflow-hidden group" type="button" aria-label="Unduh Spreadsheet Laporan Rekapitulasi">
+        <i class="fas fa-file-excel"></i> Unduh Spreadsheet
+      </button>
+    </div>
+    <div class="overflow-x-auto rounded-xl shadow-lg ring-1 ring-yellow-400">
+     <table class="w-full border-collapse text-base font-semibold">
+      <thead class="bg-yellow-100 text-yellow-900 tracking-wide select-none">
+       <tr>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Total Penerimaan Siswa (Rp)
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Total Pendapatan Lain (Rp)
+        </th>
+        <th class="border border-yellow-300 px-6 py-4 text-left">
+         Total Pengeluaran Lain (Rp)
+        </th>
+       </tr>
+      </thead>
+      <tbody class="bg-white" id="laporanRekapitulasiBody" role="rowgroup" aria-live="polite" aria-relevant="all">
+      </tbody>
+      <tfoot class="font-extrabold bg-yellow-200 text-yellow-900 select-none">
+       <tr class="bg-yellow-300 font-extrabold">
+        <td class="border border-yellow-300 px-6 py-4 text-left" colspan="3">
+         Saldo Kas Kelas: <span id="saldoRekap" class="ml-2 text-yellow-700"></span> Rp
+        </td>
+       </tr>
+      </tfoot>
+     </table>
+    </div>
+   </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-[#1a237e] to-[#536dfe] text-white text-center py-6 mt-auto relative select-none">
+   <div id="premiumVersionFooter" aria-label="Versi Premium Aplikasi Kas Kelas 10" class="animate-fadeIn" style="animation-delay: 0.3s; font-weight: 700; color: #FFD700; font-family: 'Poppins', sans-serif; font-size: 0.9rem; letter-spacing: 0.1em; margin-top: 0.25rem; user-select: none; text-shadow: 0 0 8px #FFD700;">
+   💎 Premium v2.2.4
+   </div>
+    Copyright 2025 | Kelas 10 | SMAN 2 Lamongan
+   </p>
+   <p>
+    All Rights Reserved. 
+   </p>
+  </div>
+   <span class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white/40 to-transparent"></span>
+  </footer>
+  <footer class="bg-gradient-to-r from-[#1a237e] to-[#536dfe] text-white text-center py-6 mt-auto relative select-none ">
+   <p class="opacity-90 text-sm tracking-wide font-semibold animate-fadeIn" style="animation-delay: 0.5s;">
+              Kunjungi Website Resmi SMAN 2 Lamongan 
+   <p class="opacity-90 text-sm tracking-wide font-semibold animate-fadeIn" style="animation-delay: 0.5s;"> di bawah ini! 🔽 🔽 🔽 🔽 
+   </p>
+   <div class="btn-blue sticker-container mt-8" aria-label="Tautan media sosial SMADALA">
+        <a href="https://sman2lamongan.sch.id/" target="_blank" rel="noopener noreferrer" aria-label="Website SMAN 2 Lamongan" title="Website SMAN 2 Lamongan" class="sticker-icon" tabindex="0">
+          <i class="fas fa-globe"></i>
+        </a>
+        <a href="https://www.instagram.com/smadalaofficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram SMADALA" title="Instagram SMADALA" class="sticker-icon" tabindex="0">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@smadalaofficial?lang=id-ID" target="_blank" rel="noopener noreferrer" aria-label="TikTok SMADALA" title="TikTok SMADALA" class="sticker-icon" tabindex="0">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100083832993440" target="_blank" rel="noopener noreferrer" aria-label="Facebook SMADALA" title="Facebook SMADALA" class="sticker-icon" tabindex="0">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+   <span class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-white/40 to-transparent"></span>
+  </footer>
+<p>
+  designed by Muh. Rasyid Nur Hafidz | Kelas 10
+   </p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+   // Data storage keys
+    // "siswaList" = array of {id, nama}
+    // "kasList" = array of {id, siswaId, jenis, nominal, status, keterangan, tanggal}
+    // "kasKelasList" = array of {id, jenis, nominal, keterangan, tanggal}
+
+    // Utility to generate unique IDs
+    function generateId() {
+      return '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+    // Load data from localStorage or initialize empty arrays
+    let siswaList = JSON.parse(localStorage.getItem('siswaList')) || [];
+    let kasList = JSON.parse(localStorage.getItem('kasList')) || [];
+    let kasKelasList = JSON.parse(localStorage.getItem('kasKelasList')) || [];
+
+    // DOM elements
+    const loadingScreen = document.getElementById('loadingScreen');
+    const loginPage = document.getElementById('loginPage');
+    const dashboardPage = document.getElementById('dashboardPage');
+
+    const tambahSiswaSection = document.getElementById('tambahSiswaSection');
+    const kasSiswaSection = document.getElementById('kasSiswaSection');
+    const rekapanKelasSection = document.getElementById('rekapanKelasSection');
+    const laporanRekapitulasiSection = document.getElementById('laporanRekapitulasiSection');
+
+    const formTambahSiswa = document.getElementById('formTambahSiswa');
+    const formKasSiswa = document.getElementById('formKasSiswa');
+    const formRekapanKelas = document.getElementById('formRekapanKelas');
+
+    const selectSiswaKas = document.getElementById('selectSiswaKas');
+
+    const tableKasSiswaBody = document.getElementById('tableKasSiswaBody');
+    const rekapanKelasBody = document.getElementById('rekapanKelasBody');
+    const laporanRekapitulasiBody = document.getElementById('laporanRekapitulasiBody');
+
+    const loginForm = document.getElementById('loginForm');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const namaBendaharaInput = document.getElementById('namaBendahara');
+
+    const totalPemasukanKelas = document.getElementById('totalPemasukanKelas');
+    const totalPengeluaranKelas = document.getElementById('totalPengeluaranKelas');
+    const saldoKasKelas = document.getElementById('saldoKasKelas');
+
+    const bendaharaNameDisplay = document.getElementById('bendaharaNameDisplay');
+
+    const captchaText = document.getElementById('captchaText');
+    const captchaInput = document.getElementById('captchaInput');
+
+    // Date input for rekapan kas kelas
+    const tanggalRekapan = document.getElementById('tanggalRekapan');
+
+    // Buttons for PDF download
+    const btnDownloadLaporanRekapitulasi = document.getElementById('btnDownloadLaporanRekapitulasi');
+    const btnDownloadKasPerSiswa = document.getElementById('btnDownloadKasPerSiswa');
+    const btnDownloadRekapanKelas = document.getElementById('btnDownloadRekapanKelas');
+
+    // Logout buttons
+    const btnLogout = document.getElementById('btnLogout');
+    const mobileBtnLogout = document.getElementById('mobileBtnLogout');
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // Hide hamburger menu on login, show after login
+    function updateHamburgerVisibility() {
+      if (dashboardPage.style.display === 'block') {
+        mobileMenuButton.style.display = 'flex';
+      } else {
+        mobileMenuButton.style.display = 'none';
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+      }
+    }
+
+    mobileMenuButton.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Mobile nav buttons
+    const mobileNavHome = document.getElementById('mobileNavHome');
+    const mobileNavTambahSiswa = document.getElementById('mobileNavTambahSiswa');
+    const mobileNavKasSiswa = document.getElementById('mobileNavKasSiswa');
+    const mobileNavRekapanKelas = document.getElementById('mobileNavRekapanKelas');
+    const mobileNavLaporanRekapitulasi = document.getElementById('mobileNavLaporanRekapitulasi');
+
+    // Current user variable
+    let currentUser = null;
+
+    // Valid users and passwords
+    const validUsers = {
+      "admin1": "ADMINKAS",
+      "admin2": "ADMINKAS25"
+    };
+
+    // Initialize app after loading screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 500);
+      }, 1500);
+      generateCaptcha();
+      updateHamburgerVisibility();
+    });
+
+    // Generate simple numeric captcha (4 digits)
+    function generateCaptcha() {
+      const randomNum = Math.floor(1000 + Math.random() * 9000);
+      captchaText.textContent = randomNum;
+      captchaText.dataset.value = randomNum.toString();
+      captchaInput.value = '';
+    }
+
+    // Login form submit
+    loginForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value;
+      const namaBendahara = namaBendaharaInput.value.trim();
+      const captchaValue = captchaInput.value.trim();
+
+      if (!username) {
+        alert('Masukkan username untuk login.');
+        return;
+      }
+      if (!password) {
+        alert('Masukkan password untuk login.');
+        return;
+      }
+      if (!namaBendahara) {
+        alert('Masukkan nama bendahara.');
+        return;
+      }
+      if (!captchaValue) {
+        alert('Mohon isi captcha.');
+        return;
+      }
+      if (captchaValue !== captchaText.dataset.value) {
+        alert('Captcha salah, silakan coba lagi.');
+        generateCaptcha();
+        return;
+      }
+      if (!(username in validUsers) || validUsers[username] !== password) {
+        alert('Username atau password salah, silakan coba lagi.');
+        generateCaptcha();
+        return;
+      }
+      // Login success
+      currentUser = { nama: namaBendahara };
+      showDashboard();
+      updateHamburgerVisibility();
+    });
+
+    // Show dashboard and sections
+    function showDashboard() {
+      loginPage.style.display = 'none';
+      dashboardPage.style.display = 'block';
+      tambahSiswaSection.style.display = 'none';
+      kasSiswaSection.style.display = 'none';
+      rekapanKelasSection.style.display = 'none';
+      laporanRekapitulasiSection.style.display = 'none';
+      updateDashboardInfo();
+      renderSiswaOptions();
+      renderKasSiswaTable();
+      renderRekapanKelas();
+      renderLaporanRekapitulasi();
+      showSection('home');
+    }
+
+    // Update dashboard info
+    function updateDashboardInfo() {
+      bendaharaNameDisplay.textContent = currentUser.nama;
+    }
+
+    // Render siswa options for dropdowns
+    function renderSiswaOptions() {
+      selectSiswaKas.innerHTML = '<option value="" disabled selected>-- Pilih Siswa --</option>';
+      siswaList.forEach(siswa => {
+        const option = document.createElement('option');
+        option.value = siswa.id;
+        option.textContent = siswa.nama;
+        selectSiswaKas.appendChild(option);
+      });
+    }
+
+    // Tambah siswa baru
+    formTambahSiswa.addEventListener('submit', e => {
+      e.preventDefault();
+      const nama = formTambahSiswa.namaSiswa.value.trim();
+      if (!nama) {
+        alert('Nama siswa harus diisi.');
+        return;
+      }
+      if (siswaList.some(s => s.nama.toLowerCase() === nama.toLowerCase())) {
+        alert('Nama siswa sudah terdaftar.');
+        return;
+      }
+      const newSiswa = { id: generateId(), nama };
+      siswaList.push(newSiswa);
+      localStorage.setItem('siswaList', JSON.stringify(siswaList));
+      formTambahSiswa.reset();
+      renderSiswaOptions();
+      renderRekapanKelas();
+      renderLaporanRekapitulasi();
+      alert(`Siswa ${nama} berhasil ditambahkan.`);
+    });
+
+    // Tambah kas per siswa (hanya pemasukan)
+    formKasSiswa.addEventListener('submit', e => {
+      e.preventDefault();
+      const siswaId = selectSiswaKas.value;
+      const jenis = document.getElementById('jenisKas').value;
+      const nominal = Number(document.getElementById('nominalKas').value);
+      const status = document.getElementById('statusKas').value;
+      const tanggal = document.getElementById('tanggalKas').value;
+      const keterangan = document.getElementById('keteranganKas').value.trim();
+      if (!siswaId || !jenis || !nominal || nominal <= 0 || !status || !tanggal) {
+        alert('Mohon isi semua data dengan benar.');
+        return;
+      }
+      if(jenis !== 'pemasukan'){
+        alert('Jenis kas hanya boleh pemasukan.');
+        return;
+      }
+      const newKas = {
+        id: generateId(),
+        siswaId,
+        jenis,
+        nominal,
+        status,
+        keterangan,
+        tanggal: new Date(tanggal).toISOString()
+      };
+      kasList.push(newKas);
+      localStorage.setItem('kasList', JSON.stringify(kasList));
+      formKasSiswa.reset();
+      renderKasSiswaTable();
+      renderRekapanKelas();
+      renderLaporanRekapitulasi();
+      alert('Data kas berhasil ditambahkan.');
+    });
+
+    // Tambah kas kelas (rekapan) - updated to auto update table and PDF data
+    formRekapanKelas.addEventListener('submit', e => {
+      e.preventDefault();
+      const jenis = document.getElementById('jenisKasRekapan').value;
+      const nominal = Number(document.getElementById('nominalKasRekapan').value);
+      const keterangan = document.getElementById('keteranganKasRekapan').value.trim();
+      const tanggal = tanggalRekapan.value;
+      if (!jenis || !nominal || nominal <= 0 || !tanggal) {
+        alert('Mohon isi semua data dengan benar.');
+        return;
+      }
+      if (jenis !== 'pemasukan' && jenis !== 'pengeluaran') {
+        alert('Jenis kas harus pemasukan atau pengeluaran.');
+        return;
+      }
+      const newKasKelas = {
+        id: generateId(),
+        jenis,
+        nominal,
+        keterangan,
+        tanggal: new Date(tanggal).toISOString()
+      };
+      kasKelasList.push(newKasKelas);
+      localStorage.setItem('kasKelasList', JSON.stringify(kasKelasList));
+      formRekapanKelas.reset();
+      renderRekapanKelas();
+      renderLaporanRekapitulasi();
+      alert('Data kas kelas berhasil ditambahkan.');
+    });
+
+    // Render tabel kas per siswa with status and keterangan
+    function renderKasSiswaTable() {
+      tableKasSiswaBody.innerHTML = '';
+      const sortedKas = [...kasList].sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+      sortedKas.forEach(kas => {
+        const siswa = siswaList.find(s => s.id === kas.siswaId);
+        if (!siswa) return;
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-yellow-50';
+        tr.innerHTML = `
+          <td class="border border-yellow-300 px-6 py-4">${siswa.nama}</td>
+          <td class="border border-yellow-300 px-6 py-4">${kas.jenis.charAt(0).toUpperCase() + kas.jenis.slice(1)}</td>
+          <td class="border border-yellow-300 px-6 py-4 text-right">${kas.nominal.toLocaleString('id-ID')}</td>
+          <td class="border border-yellow-300 px-6 py-4">${kas.status ? (kas.status === 'lunas' ? 'Lunas' : 'Belum Lunas') : '-'}</td>
+          <td class="border border-yellow-300 px-6 py-4">${new Date(kas.tanggal).toLocaleDateString('id-ID')}</td>
+          <td class="border border-yellow-300 px-6 py-4">${kas.keterangan || '-'}</td>
+        `;
+        tableKasSiswaBody.appendChild(tr);
+      });
+      updateTotalBayarSiswa();
+    }
+
+    // Update total bayar semua siswa dan per bulan siswa terpilih
+    function updateTotalBayarSiswa() {
+      const filterBulanInput = document.getElementById('filterBulanRekap');
+      const filterBulan = filterBulanInput ? filterBulanInput.value : null;
+      let totalSemua = 0;
+      let totalPerBulanSiswa = 0;
+      // Total semua siswa bayar (all kasList pemasukan)
+      kasList.forEach(kas => {
+        if(kas.jenis === 'pemasukan'){
+          totalSemua += kas.nominal;
+        }
+      });
+      // Total bayar per bulan siswa terpilih (filter by bulan and siswa selected)
+      if(filterBulan){
+        const [year, month] = filterBulan.split('-');
+        const siswaId = selectSiswaKas.value;
+        if(siswaId){
+          totalPerBulanSiswa = kasList.filter(k => {
+            if(k.siswaId !== siswaId) return false;
+            if(k.jenis !== 'pemasukan') return false;
+            const d = new Date(k.tanggal);
+            return d.getFullYear() === parseInt(year) && (d.getMonth()+1) === parseInt(month);
+          }).reduce((sum,k) => sum + k.nominal, 0);
+        }
+      }
+      document.getElementById('totalBayarSemuaSiswa').textContent = totalSemua.toLocaleString('id-ID');
+      document.getElementById('totalBayarPerBulanSiswa').textContent = totalPerBulanSiswa.toLocaleString('id-ID');
+    }
+
+    // Render rekapan kas kelas with keterangan, jenis kas, tanggal, nominal
+    function renderRekapanKelas() {
+      rekapanKelasBody.innerHTML = '';
+      const jenisFilter = document.getElementById('jenisKasRekapan').value;
+      const tanggalFilter = tanggalRekapan.value ? new Date(tanggalRekapan.value) : null;
+
+      let filteredKasKelas = kasKelasList;
+      if (jenisFilter) {
+        filteredKasKelas = filteredKasKelas.filter(k => k.jenis === jenisFilter);
+      }
+      if (tanggalFilter) {
+        filteredKasKelas = filteredKasKelas.filter(k => {
+          const tgl = new Date(k.tanggal);
+          return tgl.toDateString() === tanggalFilter.toDateString();
+        });
+      }
+
+      filteredKasKelas.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+
+      filteredKasKelas.forEach(kas => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-yellow-50';
+        tr.innerHTML = `
+          <td class="border border-yellow-300 px-6 py-4">${kas.keterangan || '-'}</td>
+          <td class="border border-yellow-300 px-6 py-4">${kas.jenis.charAt(0).toUpperCase() + kas.jenis.slice(1)}</td>
+          <td class="border border-yellow-300 px-6 py-4">${new Date(kas.tanggal).toLocaleDateString('id-ID')}</td>
+          <td class="border border-yellow-300 px-6 py-4 text-right">${kas.nominal.toLocaleString('id-ID')}</td>
+        `;
+        rekapanKelasBody.appendChild(tr);
+      });
+
+      // Calculate totals for filtered data
+      const totalPemasukan = filteredKasKelas
+        .filter(k => k.jenis === 'pemasukan')
+        .reduce((sum, k) => sum + k.nominal, 0);
+      const totalPengeluaran = filteredKasKelas
+        .filter(k => k.jenis === 'pengeluaran')
+        .reduce((sum, k) => sum + k.nominal, 0);
+      const saldo = totalPemasukan - totalPengeluaran;
+
+      totalPemasukanKelas.textContent = totalPemasukan.toLocaleString('id-ID');
+      totalPengeluaranKelas.textContent = totalPengeluaran.toLocaleString('id-ID');
+      saldoKasKelas.textContent = saldo.toLocaleString('id-ID');
+    }
+
+    // Render laporan rekapitulasi gabungan pemasukan siswa, pemasukan lain, pengeluaran lain per bulan dan tahun
+    function renderLaporanRekapitulasi() {
+      laporanRekapitulasiBody.innerHTML = '';
+      const filterBulanInput = document.getElementById('filterBulanRekap');
+      const filterTahunInput = document.getElementById('filterTahunRekap');
+      const filterBulan = filterBulanInput.value; // yyyy-mm
+      const filterTahun = filterTahunInput.value; // yyyy
+
+      // Filter kasList pemasukan siswa by month and year
+      let kasSiswaFiltered = kasList;
+      if(filterBulan && filterTahun){
+        kasSiswaFiltered = kasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          const m = (d.getMonth()+1).toString().padStart(2,'0');
+          return `${y}-${m}` === filterBulan && y.toString() === filterTahun;
+        });
+      } else if(filterTahun){
+        kasSiswaFiltered = kasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          return y.toString() === filterTahun;
+        });
+      } else if(filterBulan){
+        kasSiswaFiltered = kasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          const m = (d.getMonth()+1).toString().padStart(2,'0');
+          return `${y}-${m}` === filterBulan;
+        });
+      }
+
+      // Filter kasKelasList pemasukan and pengeluaran by month and year
+      let kasKelasFiltered = kasKelasList;
+      if(filterBulan && filterTahun){
+        kasKelasFiltered = kasKelasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          const m = (d.getMonth()+1).toString().padStart(2,'0');
+          return `${y}-${m}` === filterBulan && y.toString() === filterTahun;
+        });
+      } else if(filterTahun){
+        kasKelasFiltered = kasKelasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          return y.toString() === filterTahun;
+        });
+      } else if(filterBulan){
+        kasKelasFiltered = kasKelasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          const m = (d.getMonth()+1).toString().padStart(2,'0');
+          return `${y}-${m}` === filterBulan;
+        });
+      }
+
+      // Total pemasukan siswa (all siswa pemasukan)
+      const totalPenerimaanSiswa = kasSiswaFiltered
+        .filter(k => k.jenis === 'pemasukan')
+        .reduce((sum, k) => sum + k.nominal, 0);
+
+      // Total pendapatan lain (kasKelasList pemasukan)
+      const totalPendapatanLain = kasKelasFiltered
+        .filter(k => k.jenis === 'pemasukan')
+        .reduce((sum, k) => sum + k.nominal, 0);
+
+      // Total pengeluaran lain (kasKelasList pengeluaran)
+      const totalPengeluaranLain = kasKelasFiltered
+        .filter(k => k.jenis === 'pengeluaran')
+        .reduce((sum, k) => sum + k.nominal, 0);
+
+      laporanRekapitulasiBody.innerHTML = `
+        <tr>
+          <td class="border border-yellow-300 px-6 py-4">${totalPenerimaanSiswa.toLocaleString('id-ID')}</td>
+          <td class="border border-yellow-300 px-6 py-4">${totalPendapatanLain.toLocaleString('id-ID')}</td>
+          <td class="border border-yellow-300 px-6 py-4">${totalPengeluaranLain.toLocaleString('id-ID')}</td>
+        </tr>
+      `;
+
+      const saldo = totalPenerimaanSiswa + totalPendapatanLain - totalPengeluaranLain;
+      document.getElementById('saldoRekap').textContent = saldo.toLocaleString('id-ID');
+    }
+
+    // Navigation buttons
+    const navHome = document.getElementById('navHome');
+    const navTambahSiswa = document.getElementById('navTambahSiswa');
+    const navKasSiswa = document.getElementById('navKasSiswa');
+    const navRekapanKelas = document.getElementById('navRekapanKelas');
+    const navLaporanRekapitulasi = document.getElementById('navLaporanRekapitulasi');
+
+    // Show section function
+    function showSection(section) {
+      dashboardPage.style.display = 'none';
+      tambahSiswaSection.style.display = 'none';
+      kasSiswaSection.style.display = 'none';
+      rekapanKelasSection.style.display = 'none';
+      laporanRekapitulasiSection.style.display = 'none';
+
+      if (section === 'home') {
+        dashboardPage.style.display = 'block';
+      } else if (section === 'tambahSiswa') {
+        tambahSiswaSection.style.display = 'block';
+      } else if (section === 'kasSiswa') {
+        kasSiswaSection.style.display = 'block';
+      } else if (section === 'rekapanKelas') {
+        rekapanKelasSection.style.display = 'block';
+      } else if (section === 'laporanRekapitulasi') {
+        laporanRekapitulasiSection.style.display = 'block';
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (!mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+    }
+
+    navHome.addEventListener('click', () => {
+      showSection('home');
+    });
+    navTambahSiswa.addEventListener('click', () => {
+      showSection('tambahSiswa');
+    });
+    navKasSiswa.addEventListener('click', () => {
+      showSection('kasSiswa');
+    });
+    navRekapanKelas.addEventListener('click', () => {
+      showSection('rekapanKelas');
+    });
+    navLaporanRekapitulasi.addEventListener('click', () => {
+      showSection('laporanRekapitulasi');
+    });
+
+    mobileNavHome.addEventListener('click', () => {
+      showSection('home');
+    });
+    mobileNavTambahSiswa.addEventListener('click', () => {
+      showSection('tambahSiswa');
+    });
+    mobileNavKasSiswa.addEventListener('click', () => {
+      showSection('kasSiswa');
+    });
+    mobileNavRekapanKelas.addEventListener('click', () => {
+      showSection('rekapanKelas');
+    });
+    mobileNavLaporanRekapitulasi.addEventListener('click', () => {
+      showSection('laporanRekapitulasi');
+    });
+
+    // Update laporan rekapitulasi on filter change
+    document.getElementById('filterBulanRekap').addEventListener('change', () => {
+      renderLaporanRekapitulasi();
+      updateTotalBayarSiswa();
+    });
+    document.getElementById('filterTahunRekap').addEventListener('change', () => {
+      renderLaporanRekapitulasi();
+      updateTotalBayarSiswa();
+    });
+    selectSiswaKas.addEventListener('change', () => {
+      updateTotalBayarSiswa();
+    });
+
+    // Update rekapan kas kelas table on filter change
+    document.getElementById('jenisKasRekapan').addEventListener('change', () => {
+      renderRekapanKelas();
+    });
+    tanggalRekapan.addEventListener('change', () => {
+      renderRekapanKelas();
+    });
+
+    // PDF generation for Rekapan Kas Kelas
+    btnDownloadRekapanKelas.addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      doc.setFontSize(18);
+      doc.text("Rekapan Kas Kelas", 14, 22);
+      doc.setFontSize(12);
+      doc.text(`Bendahara: ${currentUser.nama}`, 14, 30);
+
+      // Table headers
+      const headers = [["Keterangan", "Jenis Kas", "Tanggal", "Nominal (Rp)"]];
+
+      // Table rows
+      const rows = [];
+
+      // Sort all kasKelasList by date descending
+      const allKasKelasSorted = [...kasKelasList].sort((a,b) => new Date(b.tanggal) - new Date(a.tanggal));
+
+      allKasKelasSorted.forEach(kas => {
+        rows.push([
+          kas.keterangan || '-',
+          kas.jenis.charAt(0).toUpperCase() + kas.jenis.slice(1),
+          new Date(kas.tanggal).toLocaleDateString('id-ID'),
+          kas.nominal.toLocaleString('id-ID')
+        ]);
+      });
+
+      // Draw table manually
+      const startY = 40;
+      const colWidths = [60, 40, 40, 40];
+      const marginLeft = 14;
+      let y = startY;
+
+      // Draw headers
+      doc.setFont(undefined, 'bold');
+      let x = marginLeft;
+      headers[0].forEach((header, i) => {
+        doc.text(header, x + 1, y);
+        x += colWidths[i];
+      });
+      doc.setFont(undefined, 'normal');
+      y += 10;
+
+      // Draw rows
+      rows.forEach(row => {
+        x = marginLeft;
+        row.forEach((cell, i) => {
+          doc.text(cell.toString(), x + 1, y);
+          x += colWidths[i];
+        });
+        y += 10;
+        if (y > 270) { // Add new page if needed
+          doc.addPage();
+          y = 20;
+        }
+      });
+
+      // Totals for all data
+      const totalPemasukan = kasKelasList
+        .filter(k => k.jenis === 'pemasukan')
+        .reduce((sum, k) => sum + k.nominal, 0);
+      const totalPengeluaran = kasKelasList
+        .filter(k => k.jenis === 'pengeluaran')
+        .reduce((sum, k) => sum + k.nominal, 0);
+      const saldo = totalPemasukan - totalPengeluaran;
+
+      y += 10;
+      doc.setFont(undefined, 'bold');
+      doc.text(`Total Pemasukan: ${totalPemasukan.toLocaleString('id-ID')} Rp`, marginLeft, y);
+      y += 8;
+      doc.text(`Total Pengeluaran: ${totalPengeluaran.toLocaleString('id-ID')} Rp`, marginLeft, y);
+      y += 8;
+      doc.text(`Saldo Kas Kelas: ${saldo.toLocaleString('id-ID')} Rp`, marginLeft, y);
+
+      doc.save(`Rekapan_Kas_Kelas_${new Date().toISOString().slice(0,10)}.pdf`);
+    });
+
+    // PDF generation for Kas Per Siswa
+    btnDownloadKasPerSiswa.addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      doc.setFontSize(18);
+      doc.text("Kas Per Siswa", 14, 22);
+      doc.setFontSize(12);
+      doc.text(`Bendahara: ${currentUser.nama}`, 14, 30);
+
+      const siswaId = selectSiswaKas.value;
+      const siswa = siswaList.find(s => s.id === siswaId);
+      const siswaName = siswa ? siswa.nama : '-';
+      doc.text(`Siswa: ${siswaName}`, 14, 38);
+
+      // Table headers
+      const headers = [["Nama Siswa", "Jenis Kas", "Nominal (Rp)", "Status", "Tanggal", "Keterangan"]];
+
+      // Table rows
+      const rows = [];
+
+      // Filter kasList by selected siswa if any
+      let filteredKasList = kasList;
+      if (siswaId) {
+        filteredKasList = kasList.filter(k => k.siswaId === siswaId);
+      }
+
+      filteredKasList.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+
+      filteredKasList.forEach(kas => {
+        const namaSiswa = siswaList.find(s => s.id === kas.siswaId)?.nama || '-';
+        rows.push([
+          namaSiswa,
+          kas.jenis.charAt(0).toUpperCase() + kas.jenis.slice(1),
+          kas.nominal.toLocaleString('id-ID'),
+          kas.status === 'lunas' ? 'Lunas' : 'Belum Lunas',
+          new Date(kas.tanggal).toLocaleDateString('id-ID'),
+          kas.keterangan || '-'
+        ]);
+      });
+
+      // Draw table manually
+      const startY = 46;
+      const colWidths = [40, 30, 30, 25, 30, 40];
+      const marginLeft = 14;
+      let y = startY;
+
+      // Draw headers
+      doc.setFont(undefined, 'bold');
+      let x = marginLeft;
+      headers[0].forEach((header, i) => {
+        doc.text(header, x + 1, y);
+        x += colWidths[i];
+      });
+      doc.setFont(undefined, 'normal');
+      y += 10;
+
+      // Draw rows
+      rows.forEach(row => {
+        x = marginLeft;
+        row.forEach((cell, i) => {
+          doc.text(cell.toString(), x + 1, y);
+          x += colWidths[i];
+        });
+        y += 10;
+        if (y > 270) { // Add new page if needed
+          doc.addPage();
+          y = 20;
+        }
+      });
+
+      // Total nominal for selected siswa
+      const totalNominal = filteredKasList.reduce((sum, k) => sum + k.nominal, 0);
+      y += 10;
+      doc.setFont(undefined, 'bold');
+      doc.text(`Total Nominal: ${totalNominal.toLocaleString('id-ID')} Rp`, marginLeft, y);
+
+      doc.save(`Kas_Per_Siswa_${siswaName.replace(/\s+/g, '_')}_${new Date().toISOString().slice(0,10)}.pdf`);
+    });
+
+    // Logout buttons
+    btnLogout.addEventListener('click', () => {
+      if(confirm('Apakah Anda yakin ingin keluar?')) {
+        currentUser = null;
+        loginPage.style.display = 'block';
+        dashboardPage.style.display = 'none';
+        tambahSiswaSection.style.display = 'none';
+        kasSiswaSection.style.display = 'none';
+        rekapanKelasSection.style.display = 'none';
+        laporanRekapitulasiSection.style.display = 'none';
+        updateHamburgerVisibility();
+      }
+    });
+    mobileBtnLogout.addEventListener('click', () => {
+      if(confirm('Apakah Anda yakin ingin keluar?')) {
+        currentUser = null;
+        loginPage.style.display = 'block';
+        dashboardPage.style.display = 'none';
+        tambahSiswaSection.style.display = 'none';
+        kasSiswaSection.style.display = 'none';
+        rekapanKelasSection.style.display = 'none';
+        laporanRekapitulasiSection.style.display = 'none';
+        updateHamburgerVisibility();
+      }
+    });
+
+    // XLSX export for Laporan Rekapitulasi with sheets: Tambah Siswa, Kas Per Siswa, Kas Kelas, Laporan Rekapitulasi
+    btnDownloadLaporanRekapitulasi.addEventListener('click', () => {
+      if (!window.XLSX) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js';
+        script.onload = () => {
+          exportToExcelFull();
+        };
+        document.head.appendChild(script);
+      } else {
+        exportToExcelFull();
+      }
+    });
+
+    function exportToExcelFull() {
+      const wb = XLSX.utils.book_new();
+
+      // Common styles
+      const titleStyle = {
+        font: { name: "Arial", sz: 16, bold: true, color: { rgb: "1A237E" } },
+        alignment: { horizontal: "center", vertical: "center" },
+      };
+      const headerStyle = {
+        font: { name: "Arial", sz: 12, bold: true, color: { rgb: "FFFFFF" } },
+        fill: { fgColor: { rgb: "1A237E" } },
+        alignment: { horizontal: "center", vertical: "center" },
+        border: {
+          top: { style: "thin", color: { rgb: "000000" } },
+          bottom: { style: "thin", color: { rgb: "000000" } },
+          left: { style: "thin", color: { rgb: "000000" } },
+          right: { style: "thin", color: { rgb: "000000" } },
+        },
+      };
+      const cellBorder = {
+        border: {
+          top: { style: "thin", color: { rgb: "000000" } },
+          bottom: { style: "thin", color: { rgb: "000000" } },
+          left: { style: "thin", color: { rgb: "000000" } },
+          right: { style: "thin", color: { rgb: "000000" } },
+        },
+      };
+
+      // Sheet 1: Tambah Siswa
+      const siswaData = siswaList.map((s, idx) => ({
+        No: idx + 1,
+        ID: s.id,
+        Nama: s.nama
+      }));
+      const wsSiswa = XLSX.utils.json_to_sheet(siswaData, {header: ["No", "ID", "Nama"]});
+      XLSX.utils.sheet_add_aoa(wsSiswa, [["DATA SISWA KELAS 10 SMAN 2 LAMONGAN"]], {origin: "A1"});
+      XLSX.utils.sheet_add_aoa(wsSiswa, [["No", "ID", "Nama"]], {origin: "A3"});
+      wsSiswa["!merges"] = [{ s: {r:0, c:0}, e: {r:0, c:2} }];
+      wsSiswa["A1"].s = titleStyle;
+      ["A3","B3","C3"].forEach(cell => { if(wsSiswa[cell]) wsSiswa[cell].s = headerStyle; });
+      for(let r=4; r<=siswaData.length+3; r++){
+        ["A","B","C"].forEach(col => {
+          const cell = col + r;
+          if(wsSiswa[cell]) wsSiswa[cell].s = cellBorder;
+        });
+      }
+      XLSX.utils.book_append_sheet(wb, wsSiswa, "Tambah Siswa");
+
+      // Sheet 2: Kas Per Siswa
+      const kasSiswaData = kasList.map((k, idx) => {
+        const siswa = siswaList.find(s => s.id === k.siswaId);
+        return {
+          No: idx + 1,
+          Nama_Siswa: siswa ? siswa.nama : '-',
+          Jenis_Kas: k.jenis.charAt(0).toUpperCase() + k.jenis.slice(1),
+          Nominal_Rp: k.nominal,
+          Status: k.status === 'lunas' ? 'Lunas' : 'Belum Lunas',
+          Tanggal: new Date(k.tanggal).toLocaleDateString('id-ID'),
+          Keterangan: k.keterangan || '-'
+        };
+      });
+      const wsKasSiswa = XLSX.utils.json_to_sheet(kasSiswaData, {header: ["No", "Nama_Siswa", "Jenis_Kas", "Nominal_Rp", "Status", "Tanggal", "Keterangan"]});
+      XLSX.utils.sheet_add_aoa(wsKasSiswa, [["DATA KAS PER SISWA KELAS 10 SMAN 2 LAMONGAN"]], {origin: "A1"});
+      XLSX.utils.sheet_add_aoa(wsKasSiswa, [["No", "Nama_Siswa", "Jenis_Kas", "Nominal_Rp", "Status", "Tanggal", "Keterangan"]], {origin: "A3"});
+      wsKasSiswa["!merges"] = [{ s: {r:0, c:0}, e: {r:0, c:6} }];
+      wsKasSiswa["A1"].s = titleStyle;
+      ["A3","B3","C3","D3","E3","F3","G3"].forEach(cell => { if(wsKasSiswa[cell]) wsKasSiswa[cell].s = headerStyle; });
+      for(let r=4; r<=kasSiswaData.length+3; r++){
+        ["A","B","C","D","E","F","G"].forEach(col => {
+          const cell = col + r;
+          if(wsKasSiswa[cell]) wsKasSiswa[cell].s = cellBorder;
+        });
+      }
+      XLSX.utils.book_append_sheet(wb, wsKasSiswa, "Kas Per Siswa");
+
+      // Sheet 3: Kas Kelas
+      const kasKelasData = kasKelasList.map((k, idx) => ({
+        No: idx + 1,
+        Keterangan: k.keterangan || '-',
+        Jenis_Kas: k.jenis.charAt(0).toUpperCase() + k.jenis.slice(1),
+        Tanggal: new Date(k.tanggal).toLocaleDateString('id-ID'),
+        Nominal_Rp: k.nominal
+      }));
+      const wsKasKelas = XLSX.utils.json_to_sheet(kasKelasData, {header: ["No", "Keterangan", "Jenis_Kas", "Tanggal", "Nominal_Rp"]});
+      XLSX.utils.sheet_add_aoa(wsKasKelas, [["REKAPAN KAS KELAS 10 SMAN 2 LAMONGAN"]], {origin: "A1"});
+      XLSX.utils.sheet_add_aoa(wsKasKelas, [["No", "Keterangan", "Jenis_Kas", "Tanggal", "Nominal_Rp"]], {origin: "A3"});
+      wsKasKelas["!merges"] = [{ s: {r:0, c:0}, e: {r:0, c:4} }];
+      wsKasKelas["A1"].s = titleStyle;
+      ["A3","B3","C3","D3","E3"].forEach(cell => { if(wsKasKelas[cell]) wsKasKelas[cell].s = headerStyle; });
+      for(let r=4; r<=kasKelasData.length+3; r++){
+        ["A","B","C","D","E"].forEach(col => {
+          const cell = col + r;
+          if(wsKasKelas[cell]) wsKasKelas[cell].s = cellBorder;
+        });
+      }
+      XLSX.utils.book_append_sheet(wb, wsKasKelas, "Kas Kelas");
+
+      // Sheet 4: Laporan Rekapitulasi
+      const filterBulanInput = document.getElementById('filterBulanRekap');
+      const filterTahunInput = document.getElementById('filterTahunRekap');
+      const filterBulan = filterBulanInput.value; // yyyy-mm
+      const filterTahun = filterTahunInput.value; // yyyy
+
+      let kasSiswaFiltered = kasList;
+      if(filterBulan && filterTahun){
+        kasSiswaFiltered = kasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          const m = (d.getMonth()+1).toString().padStart(2,'0');
+          return `${y}-${m}` === filterBulan && y.toString() === filterTahun;
+        });
+      } else if(filterTahun){
+        kasSiswaFiltered = kasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          return y.toString() === filterTahun;
+        });
+      } else if(filterBulan){
+        kasSiswaFiltered = kasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          const m = (d.getMonth()+1).toString().padStart(2,'0');
+          return `${y}-${m}` === filterBulan;
+        });
+      }
+
+      let kasKelasFiltered = kasKelasList;
+      if(filterBulan && filterTahun){
+        kasKelasFiltered = kasKelasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          const m = (d.getMonth()+1).toString().padStart(2,'0');
+          return `${y}-${m}` === filterBulan && y.toString() === filterTahun;
+        });
+      } else if(filterTahun){
+        kasKelasFiltered = kasKelasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          return y.toString() === filterTahun;
+        });
+      } else if(filterBulan){
+        kasKelasFiltered = kasKelasList.filter(k => {
+          const d = new Date(k.tanggal);
+          const y = d.getFullYear();
+          const m = (d.getMonth()+1).toString().padStart(2,'0');
+          return `${y}-${m}` === filterBulan;
+        });
+      }
+
+      const totalPenerimaanSiswa = kasSiswaFiltered
+        .filter(k => k.jenis === 'pemasukan')
+        .reduce((sum, k) => sum + k.nominal, 0);
+
+      const totalPendapatanLain = kasKelasFiltered
+        .filter(k => k.jenis === 'pemasukan')
+        .reduce((sum, k) => sum + k.nominal, 0);
+
+      const totalPengeluaranLain = kasKelasFiltered
+        .filter(k => k.jenis === 'pengeluaran')
+        .reduce((sum, k) => sum + k.nominal, 0);
+
+      const saldo = totalPenerimaanSiswa + totalPendapatanLain - totalPengeluaranLain;
+
+      const laporanData = [
+        ["LAPORAN REKAPITULASI KEUANGAN KELAS 10 SMAN 2 LAMONGAN"],
+        [],
+        ["Periode", `${filterBulan || '-'} / ${filterTahun || '-'}`],
+        [],
+        ["Total Penerimaan Siswa (Rp)", totalPenerimaanSiswa],
+        ["Total Pendapatan Lain (Rp)", totalPendapatanLain],
+        ["Total Pengeluaran Lain (Rp)", totalPengeluaranLain],
+        ["Saldo Kas Kelas (Rp)", saldo]
+      ];
+
+      const wsLaporan = XLSX.utils.aoa_to_sheet(laporanData);
+
+      wsLaporan["!merges"] = [{ s: {r:0, c:0}, e: {r:0, c:1} }];
+      wsLaporan["A1"].s = titleStyle;
+      for(let r=2; r<=7; r++){
+        const cellA = "A" + (r+1);
+        if(wsLaporan[cellA]){
+          wsLaporan[cellA].s = { font: { bold: true }, alignment: { horizontal: "left" } };
+        }
+      }
+      for(let r=2; r<=7; r++){
+        const cellB = "B" + (r+1);
+        if(wsLaporan[cellB]){
+          wsLaporan[cellB].s = { alignment: { horizontal: "right" }, numFmt: "#,##0" };
+        }
+      }
+      XLSX.utils.book_append_sheet(wb, wsLaporan, "Laporan Rekapitulasi");
+
+      const fileName = `Laporan_Rekapitulasi_Kelas_10_${new Date().toISOString().slice(0,10)}.xlsx`;
+      XLSX.writeFile(wb, fileName);
+    }
+  </script>
+ </body>
+</html>
